@@ -1,0 +1,46 @@
+composer create-project --prefer-dist laravel/laravel NAME_YOUR_PROJECT => for create new project in laravel
+
+php artisan serve => for lanch the server
+
+php  artisan make:controller  => for create a new controller
+
+php artisan make:migration NAME_MIGRATION
+
+php artisan migrate => for create tables which you have written
+
+php artisan migrate:refresh => for update the edits in your data
+
+php artisan make:model NAME_MODEL
+
+- the right way to install sanctum which provide you to make Authentication in your Api :
+
+------- Install the package by these commands ------- 
+
+composer require laravel/sanctum 
+php artisan serve vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
+
+------- Update Route Service Provider File -------
+
+Uncomment ( protected $namespace = 'App\Htpp\Controllers'; )
+Update model
+
+-------------------------------------------------------
+
+use Laravel\Sanctum\HasApiTokens;
+
+inside class - HasApiToken
+-------------------------------------------------------
+
+unsigned in mysql => allows us to put postive value , you cannot put negative value when you use unsigned
+where() in laravel means :  finds a query value match on the database's column name.
+
+-------------------------------------------------------
+
+when you want to create relation between two columnes in several table you can use this method : 
+
+
+in migration file : 
+
+$table-foregin( 'name_column' )->refrences( 'another_column' )->on('the name of the table which the column inside')
+Don't forget the unsignedBigInteger -- you have  to put it in column which you want to relate it
+
